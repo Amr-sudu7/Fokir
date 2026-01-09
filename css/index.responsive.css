@@ -1,0 +1,419 @@
+@media (max-width: 1300px) {
+
+
+    .navbar .logo {
+        width: 20%;
+    }
+
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .navbar .pages {
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        width: 80%;
+        border-radius: 15px;
+        background-color: #333;
+        transform: translate(-50%);
+        overflow: hidden;
+        height: 0px;
+        transition-duration: 1s;
+    }
+
+    .navbar .pages ul {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 0px;
+        height: 250px;
+
+    }
+
+    .navbar .pages ul li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0px;
+    }
+
+    .navbar .pages ul li:not(:last-child) {
+        margin-right: 0px;
+    }
+
+    .navbar .pages ul li a::after {
+        bottom: -20%;
+        width: 100%;
+        height: 2px;
+    }
+
+
+    .navbar .navbarButton {
+        width: 50px;
+        height: 40px;
+        border: 1px solid var(--primary-color);
+        border-radius: 4px;
+        display: flex;
+    }
+
+    .navbar .navbarButton span {
+        height: 3px;
+        width: 50%;
+    }
+
+
+    .navbar .navbarButton:focus~.pages {
+        height: 250px;
+
+    }
+
+
+
+    .section-1 .content h4 {
+        font-size: 20px;
+    }
+
+    .section-1 .content h1 {
+        font-size: 50px;
+    }
+
+    .section-1 .content p {
+        font-size: 15px;
+    }
+
+
+
+    #About .container {
+        width: 90%;
+        flex-wrap: wrap;
+    }
+
+    #About .container .part1 {
+        width: 280px;
+    }
+
+    #About .container .part2 {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    #About .container .part2 .info .in {
+        flex-basis: 100%;
+        margin-bottom: 15px;
+        font-size: 14px;
+
+    }
+
+    #About .container .part2 .btns button {
+        padding: 10px 15px;
+    }
+
+
+
+
+
+    
+#Services .container {
+width: 90%;
+}
+
+
+
+#Services .container .card{
+flex-basis: 100%;
+
+}
+#Services .container .card .item{
+    margin-right: 0px;
+}
+
+
+
+
+#Portfolio .container .card{
+
+    width: 100%;
+}
+
+
+#Portfolio .container .card .item{
+margin-right: 0px;
+
+}
+
+#Portfolio .container .card .item .layout a{
+padding: 10px 10px;
+font-size: 14px;
+
+}
+
+#Portfolio .container .card .item:hover .layout a{
+bottom: 10%;
+}
+
+#Portfolio .container .card .item .layout h3{
+font-size: 20px;
+
+}
+
+#Blog .container .card{
+margin-bottom: 30px;
+}
+
+#Contact .container form{
+    width: 90%;
+
+}
+#Contact .container form .card .in:nth-child(1),
+#Contact .container form .card .in:nth-child(2)
+{
+    width: 100%;
+}
+
+#Contact .container form .card .in .item .insert{
+    margin-bottom: 15px;
+
+}
+
+#Contact .container form button{
+width: 100%;
+}
+
+
+
+
+footer h5 {
+
+    font-size: 12px;
+
+}
+
+
+}
+
+
+/* -------------------------------------------------------------------- */
+
+
+
+@media (min-width: 371px) and (max-width: 1300px) {
+
+
+    .navbar .logo {
+        width: 12%;
+
+
+    }
+
+
+
+    .navbar .logo {
+        width: 15%;
+    }
+
+
+    .section-1 .content h4 {
+        font-size: 25px;
+    }
+
+    .section-1 .content h1 {
+        font-size: 60px;
+    }
+
+    .section-1 .content p {
+        font-size: 20px;
+    }
+
+    #About .container .part2 .info .in {
+        flex-basis: 50%;
+        margin-bottom: 15px;
+    }
+
+
+#Services .container .card{
+flex-basis: 70%;
+margin: auto;
+}
+
+ #About .container .part2 .info .in h4 {
+        font-size: 13px;
+    }
+     #About .container .part2 .info .in p{
+        font-size: 12px;
+    }
+
+
+
+    #Portfolio .container .card{
+    width:85%;
+    margin: auto;
+}
+
+
+#Contact .container form{
+    width: 80%;
+
+}
+
+
+footer h5 {
+
+    font-size: 15px;
+
+}
+
+}
+
+@media (min-width: 577px) and (max-width: 1300px) {
+
+
+
+    .section-1 .content h4 {
+        font-size: 30px;
+    }
+
+    .section-1 .content h1 {
+        font-size: 70px;
+    }
+
+    .section-1 .content p {
+        font-size: 25px;
+    }
+
+
+    #About .container .part2 .btns button {
+        padding: 15px 20px;
+    }
+
+#Services .container .card{
+flex-basis: 50%;
+margin: auto;
+}
+
+#Services .container .card :nth-child(1),
+#Services .container .card :nth-child(3)
+{
+margin-right: 20px;
+}
+
+
+
+#Portfolio .container .card{
+    width:50%;
+    margin: auto;
+}
+
+#Portfolio .container .card .item{
+
+margin-right: 10px;
+}
+
+#Portfolio .container .card .item .layout a{
+
+font-size: 13px;
+}
+
+
+#Blog .container .card{
+width: 50%;
+
+}
+#Blog .container .card .item{
+    margin-right: 20px;
+}
+
+#Contact .container form{
+    width: 60%;
+
+}
+
+}
+
+@media (min-width: 769px) and (max-width: 1300px) {
+
+
+    .navbar .logo {
+        width: 10%;
+    }
+
+
+    #About .container .part1 {
+        width: 50%;
+    }
+
+    #About .container .part1 .item {
+
+        margin: 50px;
+    }
+
+    #About .container .part2 {
+        width: 50%;
+        margin-top: 50px;
+    }
+
+
+    #About .container .part2 .info .in h4 {
+        font-size: 14px;
+    }
+
+
+
+    #Services .container .card{
+flex-basis: 40%;
+margin: auto;
+}
+
+
+#Portfolio .container .card{
+    width:40%;
+    margin: auto ;
+}
+
+#Blog .container .card {
+
+    width: 40%;
+}
+
+
+#Contact .container form{
+    width: 70%;
+
+}
+
+#Contact .container form .card .in:nth-child(1),
+#Contact .container form .card .in:nth-child(2)
+{
+    width: 49%;
+}
+
+
+}
+
+@media (min-width: 992px) and (max-width: 1300px) {
+
+
+    
+    #Services .container .card{
+flex-basis: 25%;
+margin: auto;
+}
+
+    #Services .container .card .item h3{
+        font-size: 15px;
+    }
+#Portfolio .container .card{
+    width:calc(90%/3);
+}
+
+
+#Blog .container .card {
+
+    width: calc(100%/3);
+}
+
+
+}
+
+@media (min-width: 1181px) and (max-width: 1300px) {}
