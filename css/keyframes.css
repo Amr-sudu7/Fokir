@@ -1,0 +1,91 @@
+@keyframes anchor_ball {
+  0% {
+    top: -20%;
+    opacity: 1;
+  }
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+  100% {
+    top: 50%;
+    opacity: 0;
+  }
+}
+
+
+@keyframes Designer_writeing {
+
+    0%{
+        content: "D";
+    }
+    10%{
+        content: "De";
+    }
+    20%{
+        content: "Des";
+    }
+    30%{
+        content: "Desi";
+    }
+    40%{
+        content: "Desig";
+    }
+    50%{
+        content: "Design";
+    }
+    60%{
+        content: "Designe";
+    }
+    70%{
+        content: "Designer ";
+    }
+    80%{
+        content: "Designer |";
+    }
+    90%{
+        content: "Designer |";
+    }
+    100%{
+        content: "Designer |";
+    }
+    
+}
+
+@keyframes HeaderGlow {
+
+    0%{
+        bottom: 0;
+        left: -20%;
+    }
+    
+    50%{
+        bottom: 0;
+        left: -20%; 
+    }
+    
+    100%{
+        bottom: 100%;
+        left: 120%; 
+    }
+}
+
+
+
+@keyframes bgMove {
+  from {
+    background-position: -1550px center;
+  }
+  to {
+    background-position: center;
+  }
+}
+
+@keyframes header_before_animation {
+  from {
+    background-color: rgba(5, 5, 5, 0.7);
+  }
+  to {
+    background-color: rgba(5, 5, 5, 0.8);
+  }
+}

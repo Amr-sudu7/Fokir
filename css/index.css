@@ -1,0 +1,651 @@
+/* --------------------------------------------------------------------------------------------------------------- */
+/*                                                  Nav Bar                                                        */
+/* --------------------------------------------------------------------------------------------------------------- */
+
+/* Giving The Nav fixed position and bg-color */
+nav {
+  background-color: #333;
+  padding-block: 7px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+}
+
+/*  Nav Container + container in global ( Flex + width 80%) */
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Fokir Logo container on the left */
+nav .container .logo {
+  width: 5%;
+}
+
+nav .container .logo img {
+  width: 100%;
+  display: block;
+}
+
+/* Nav Bar Button */
+nav .container button {
+  display: none;
+}
+
+nav .container button span {
+  width: 65%;
+  height: 2px;
+  background-color: var(--main-color);
+}
+
+/* ul that has the li that has the anchors to the sections */
+nav .container .links ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* li position to move the ::after */
+nav .container .links ul li {
+  position: relative;
+}
+
+/* anchor style */
+nav .container .links ul li a {
+  text-decoration: none;
+  color: white;
+  letter-spacing: 1px;
+  transition-duration: 0.5s;
+}
+
+/* li::after style and creation (The underline) */
+nav .container .links ul li::after {
+  content: "";
+  width: 0%;
+  background-color: var(--main-color);
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translate(-50%);
+  transition-duration: 0.5s;
+}
+
+/* reordering the last li "the Home one" to the very first */
+nav .container .links ul li:nth-of-type(6) {
+  order: -1;
+}
+
+/* changing the color on hover and select to the main color */
+nav .container .links ul li:hover a,
+nav .container .links ul li.active a,
+nav .container .links ul li:focus-within a {
+  color: var(--main-color);
+}
+
+/* show the underline on hover and select */
+nav .container .links ul li:hover::after,
+nav .container .links ul li.active::after,
+nav .container .links ul li:focus-within::after {
+  width: 100%;
+}
+
+/* remove the style from the .active li */
+/* Selector: select the ::after(underline) of the li that has the class .active, the li must be a sibling to any other li in the ul in the .links in the nav we focus on it (click) */
+nav .container .links ul li:not(.active):focus-within ~ li.active::after {
+  width: 0%;
+}
+
+/* Same but changing the anchor color */
+nav .container .links ul li:not(.active):focus-within ~ li.active a {
+  color: white;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/*                                                 Header                                                          */
+/* --------------------------------------------------------------------------------------------------------------- */
+
+/* Giving The Header bg-image and 100 view height and flex */
+header {
+  height: 100vh;
+  text-align: center;
+  background-image: url(../images/slider-01-cd8154e4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  /* animation: bgMove 2s ease forwards; */
+}
+
+/* The opacity on the image */
+header::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: rgba(5, 5, 5, 0.7);
+  animation: header_before_animation infinite 4s alternate linear;
+}
+
+/* the div that has the title and stuff */
+header .content {
+  position: absolute;
+  color: white;
+  letter-spacing: 1px;
+}
+
+/* H4 */
+header .content h4 {
+  font-size: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* H1 */
+header .content h1 {
+  color: var(--main-color);
+  font-size: clamp(2.5rem, 12vw, 4.5rem);
+  margin-block: 15px;
+}
+
+/* P */
+header .content p {
+  font-size: clamp(1rem, 1.2vw, 2.4rem);
+}
+
+/* giving the "Designer word" writing animation */
+header .content p::after {
+  content: "";
+  animation: Designer_writeing infinite 2s alternate linear;
+}
+
+/* the cool shape under the content with the ball (::before) */
+header a {
+  border: 2px solid var(--main-color);
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%);
+  height: 60px;
+  width: 30px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+header a::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: anchor_ball 2s infinite linear;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -20%;
+  width: 10vw;
+  height: 200%;
+  background-color: rgba(195, 195, 195, 0.05);
+  transform: translate(-50%, 50%) rotate(-45deg);
+  /* box-shadow: rgba(195, 195, 195, 0.07) 0px -23px 25px 0px inset, rgba(195, 195, 195, 0.05) 0px -36px 30px 0px inset, rgba(195, 195, 195, 0.009) 0px -79px 40px 0px inset, rgba(195, 195, 195, 0.06) 0px 2px 1px, rgba(195, 195, 195, 0.09) 0px 4px 2px, rgba(195, 195, 195, 0.09) 0px 8px 4px, rgba(195, 195, 195, 0.09) 0px 16px 8px, rgba(195, 195, 195, 0.09) 0px 32px 16px; */
+  animation: HeaderGlow infinite 6s alternate ease-in-out;
+  animation-delay: 2s;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/*                                                 About                                                           */
+/* --------------------------------------------------------------------------------------------------------------- */
+
+#About .container {
+  display: flex;
+}
+
+/* Width 50% for each part */
+#About .container .part {
+  width: 50%;
+}
+
+/* the div that has all the things inside .frame */
+#About .container .frame {
+  width: 350px;
+  margin: auto;
+  border: 4px solid var(--main-color);
+  border-radius: 10px;
+  position: relative;
+}
+
+/* moving the image so the frame shows cool */
+#About .container .frame .image {
+  width: 100%;
+  position: relative;
+  top: 15px;
+  left: 15px;
+  overflow: hidden;
+}
+
+/* giving the image width 100% and display block for the 1 px at the bottom and radius */
+#About .container .frame .image img {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* the layout that contains the ul that contains the icons */
+#About .container .frame .image .layout {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  transition-duration: 1s;
+}
+
+/* show layout when hovering the .image div */
+#About .container .frame .image:hover .layout {
+  top: 0;
+}
+
+/* ul flex and full space */
+#About .container .frame .image .layout ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+/* each icon hiden at first */
+#About .container .frame .image .layout ul li {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+/* reveal each icon item on hover */
+#About .container .frame .image:hover .layout ul li {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 1s;
+  transition-duration: 1s;
+}
+
+/* second icon reveal delay */
+#About .container .frame .image:hover .layout ul li:nth-of-type(2) {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 1.2s;
+  transition-duration: 1s;
+}
+
+/* third icon reveal delay */
+#About .container .frame .image:hover .layout ul li:nth-of-type(3) {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 1.4s;
+  transition-duration: 1s;
+}
+
+/* fourth icon reveal delay */
+#About .container .frame .image:hover .layout ul li:nth-of-type(4) {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 1.6s;
+  transition-duration: 1s;
+}
+
+/* anchor text decoration */
+#About .container .frame .image .layout ul li a {
+  text-decoration: none;
+  color: #1b1f23;
+}
+
+/* first icon color */
+#About .container .frame .image .layout ul li:nth-of-type(1) a {
+  color: #1877f2;
+}
+
+/* second icon color */
+#About .container .frame .image .layout ul li:nth-of-type(2) a {
+  color: #e4405f;
+}
+
+/* third icon color */
+#About .container .frame .image .layout ul li:nth-of-type(3) a {
+  color: #1da1f2;
+}
+
+/* icon inner shape */
+#About .container .frame .image .layout ul li a i {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+#About .container .content > * {
+  margin-bottom: 25px;
+}
+#About .container .content h2 {
+  border-left: 5px solid var(--main-color);
+  padding: 0px 10px;
+  color: white;
+  font-size: 30px;
+}
+#About .container .content p {
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+#About .container .content hr {
+  border-style: dashed;
+}
+#About .container .content .col {
+  color: #fff;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+#About .container .content .col .text {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  align-items: center;
+}
+
+#About .container .content .col .text h6 {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/*                                              Services                                                           */
+/* --------------------------------------------------------------------------------------------------------------- */
+
+#Services .container {
+  padding: 50px 0px;
+  display: flex;
+  color: white;
+  column-gap: 20px;
+}
+
+#Services .container .card {
+  text-align: center;
+  width: 25%;
+}
+
+#Services .container .card .item {
+  border: 1px solid var(--main-color);
+  padding: 20px 30px;
+  border-radius: 10px;
+  transition-duration: 0.5s;
+}
+
+#Services .container .card .item:hover {
+  transform: translateY(-15px);
+  box-shadow:
+    0 5px #ff305b66,
+    0 10px #ff305b4d,
+    0 15px #ff305b33,
+    0 20px #ff305b1a,
+    0 25px #ff305b0d,
+    -5px 5px 40px #64000066;
+}
+
+#Services .container .card .item i {
+  font-size: 30px;
+  color: var(--main-color);
+}
+
+#Services .container .card .item h3 {
+  margin: 10px 0px;
+}
+
+#Services .container .card .item p {
+  font-size: 16px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/*                                             Portfolio                                                           */
+/* --------------------------------------------------------------------------------------------------------------- */
+
+#Portfolio .container {
+  display: flex;
+  padding: 40px 0px;
+  flex-wrap: wrap;
+}
+
+#Portfolio .container .card {
+  width: calc(100% / 3);
+}
+#Portfolio .container .card .item {
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+#Portfolio .container .card .item img {
+  border-radius: 10px;
+  width: 100%;
+  display: block;
+}
+
+#Portfolio .container .card .item .layout {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 48, 91, 0.5);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 100%;
+  transition-duration: 1s;
+  overflow: hidden;
+}
+
+#Portfolio .container .card .item:hover .layout {
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 10px;
+}
+
+#Portfolio .container .card .item .layout h3 {
+  color: white;
+  background-color: var(--main-color);
+  font-size: 25px;
+  position: absolute;
+  width: 100%;
+  padding: 10px 0px;
+  text-align: center;
+  top: 10%;
+  left: 100%;
+}
+
+#Portfolio .container .card .item .layout a {
+  text-decoration: none;
+  color: var(--main-color);
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  bottom: -30%;
+  transform: translateX(-50%);
+}
+
+#Portfolio .container .card .item:hover .layout a {
+  bottom: 15%;
+  transition-delay: 1s;
+  transition-duration: 1s;
+}
+
+#Portfolio .container .card .item:hover .layout h3 {
+  transition-delay: 1s;
+  transition-duration: 1s;
+  left: 0;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/*                                                Blog                                                             */
+/* --------------------------------------------------------------------------------------------------------------- */
+
+#Blog .title {
+  margin-bottom: 40px;
+}
+#Blog .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Blog .container .card {
+  width: 280px;
+  margin: auto;
+}
+
+#Blog .container .card .item {
+  overflow: hidden;
+  border: 2px solid var(--main-color);
+  border-radius: 10px;
+}
+
+#Blog .container .card .item img,
+#Blog .container .card .item iframe {
+  width: 100%;
+  height: 200px;
+}
+
+#Blog .container .card .item .lamp {
+  padding: 20px;
+}
+
+#Blog .container .card .item .lamp > * {
+  padding: 5px;
+  color: #fff;
+}
+
+#Blog .container .card .item .lamp p {
+  line-height: 30px;
+  color: #c1c1c1;
+}
+
+#Blog .container .card .item .lamp a {
+  text-decoration: none;
+  color: var(--main-color);
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  margin-top: 5px;
+  padding: 10px;
+  display: block;
+  width: fit-content;
+  transition-duration: 1s;
+}
+#Blog .container .card .item .lamp a i {
+  transition-duration: 1s;
+}
+#Blog .container .card .item .lamp a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+#Blog .container .card .item .lamp a:hover i {
+  margin-left: 5px;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/*                                          Contact Us                                                             */
+/* --------------------------------------------------------------------------------------------------------------- */
+
+#Contact .title {
+  margin-bottom: 40px;
+}
+#Contact .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Contact .container form {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#Contact .container form .col {
+  display: flex;
+  column-gap: 10px;
+}
+
+#Contact .container form > * {
+  width: 100%;
+}
+#Contact .container form .col input {
+  width: 50%;
+}
+#Contact .container form input {
+  color: #fff;
+  width: 100%;
+  margin: auto;
+  border: 1px solid var(--main-color);
+  background-color: transparent;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+#Contact .container form textarea {
+  width: 100%;
+  height: 180px;
+  resize: none;
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+#Contact .container form input:focus,
+#Contact .container form textarea:focus {
+  outline: none;
+  border: 1px solid var(--main-color);
+}
+#Contact .container form input::placeholder,
+#Contact .container form textarea::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+#Contact form .btn {
+  color: var(--main-color);
+  width: fit-content;
+}
+#Contact form .btn:hover {
+  color: #fff;
+}
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/*                                              Footer                                                             */
+/* --------------------------------------------------------------------------------------------------------------- */
+
+footer h5 {
+  color: #fff;
+  text-align: center;
+  background-color: #333333;
+  font-size: 15px;
+  padding: 10px;
+}
