@@ -166,6 +166,8 @@
   #Contact .container form {
     width: 70%;
   }
+
+
 }
 
 @media (min-width: 577px) and (max-width: 1300px) {
@@ -198,7 +200,7 @@
     width: 50%;
   }
   #Blog .container .card .item {
-    margin-right: 20px;
+    margin-inline: 20px;
   }
 
   #Contact .container form .col {
