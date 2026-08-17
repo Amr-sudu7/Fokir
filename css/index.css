@@ -96,12 +96,10 @@ nav .container .links ul li:focus-within::after {
 
 /* remove the style from the .active li */
 /* Selector: select the ::after(underline) of the li that has the class .active, the li must be a sibling to any other li in the ul in the .links in the nav we focus on it (click) */
-nav .container .links ul li:not(.active):focus-within ~ li.active::after {
+nav .container .links ul:focus-within li.active:not(:focus-within)::after {
   width: 0%;
 }
-
-/* Same but changing the anchor color */
-nav .container .links ul li:not(.active):focus-within ~ li.active a {
+nav .container .links ul:focus-within li.active:not(:focus-within) a {
   color: white;
 }
 
@@ -144,6 +142,7 @@ header .content {
 /* H4 */
 header .content h4 {
   font-size: clamp(1rem, 3vw, 2.5rem);
+  
 }
 
 /* H1 */
@@ -151,6 +150,7 @@ header .content h1 {
   color: var(--main-color);
   font-size: clamp(2.5rem, 12vw, 4.5rem);
   margin-block: 15px;
+  text-shadow: 10px 5px 40px var(--main-color);
 }
 
 /* P */
@@ -189,6 +189,7 @@ header a::before {
   left: 50%;
   transform: translate(-50%, -50%);
   animation: anchor_ball 2s infinite linear;
+  box-shadow: 0 0 15px 5px #ff305b50;
 }
 
 header::after {
