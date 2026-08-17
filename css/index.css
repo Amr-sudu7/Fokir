@@ -75,32 +75,14 @@ nav .container .links ul li::after {
   transition-duration: 0.5s;
 }
 
-/* reordering the last li "the Home one" to the very first */
-nav .container .links ul li:nth-of-type(6) {
-  order: -1;
-}
-
-/* changing the color on hover and select to the main color */
-nav .container .links ul li:hover a,
-nav .container .links ul li.active a,
-nav .container .links ul li:focus-within a {
-  color: var(--main-color);
-}
-
 /* show the underline on hover and select */
 nav .container .links ul li:hover::after,
-nav .container .links ul li.active::after,
-nav .container .links ul li:focus-within::after {
+nav .container .links ul li.active::after {
   width: 100%;
 }
-
-/* remove the style from the .active li */
-/* Selector: select the ::after(underline) of the li that has the class .active, the li must be a sibling to any other li in the ul in the .links in the nav we focus on it (click) */
-nav .container .links ul:focus-within li.active:not(:focus-within)::after {
-  width: 0%;
-}
-nav .container .links ul:focus-within li.active:not(:focus-within) a {
-  color: white;
+nav .container .links ul li:hover a,
+nav .container .links ul li.active a {
+  color: var(--main-color);
 }
 
 /* --------------------------------------------------------------------------------------------------------------- */
@@ -142,7 +124,6 @@ header .content {
 /* H4 */
 header .content h4 {
   font-size: clamp(1rem, 3vw, 2.5rem);
-  
 }
 
 /* H1 */
